@@ -19,9 +19,9 @@ import {
   useDollarState
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
+import { SimpleChart } from "@plasmicpkgs/react-chartjs-2";
 import RadioGroup from "../../RadioGroup"; // plasmic-import: sWXMCQynZyP7/component
 import Radio from "../../Radio"; // plasmic-import: bO1zqe-W4Egq/component
-import { SimpleChart } from "@plasmicpkgs/react-chartjs-2";
 import Button from "../../Button"; // plasmic-import: 0Im7ofUWeSOU/component
 import Slider from "../../Slider"; // plasmic-import: gP0kW2ReuBiN/component
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: n77bFagGCBm17CMGVYCTUy/styleTokensProvider
@@ -113,6 +113,18 @@ function PlasmicHomepage__RenderFunc(props) {
             >
               {"Get started with Plasmic visual CMS."}
             </h1>
+            <SimpleChart
+              data-plasmic-name={"chart"}
+              data-plasmic-override={overrides.chart}
+              className={classNames("__wab_instance", sty.chart)}
+              data={[
+                { region: "APAC", revenue: 3294, spend: 2675 },
+                { region: "EMEA", revenue: 3245, spend: 3895 },
+                { region: "LATAM", revenue: 2165, spend: 3498 },
+                { region: "AMER", revenue: 3215, spend: 1656 }
+              ]}
+            />
+
             <RadioGroup
               data-plasmic-name={"radioGroup"}
               data-plasmic-override={overrides.radioGroup}
@@ -151,18 +163,6 @@ function PlasmicHomepage__RenderFunc(props) {
                     className={classNames("__wab_instance", sty.radio__irvpt)}
                     label={"t bo"}
                     value={"option1"}
-                  />
-
-                  <SimpleChart
-                    data-plasmic-name={"chart"}
-                    data-plasmic-override={overrides.chart}
-                    className={classNames("__wab_instance", sty.chart)}
-                    data={[
-                      { region: "APAC", revenue: 3294, spend: 2675 },
-                      { region: "EMEA", revenue: 3245, spend: 3895 },
-                      { region: "LATAM", revenue: 2165, spend: 3498 },
-                      { region: "AMER", revenue: 3215, spend: 1656 }
-                    ]}
                   />
 
                   <Radio
@@ -391,9 +391,9 @@ const PlasmicDescendants = {
   root: [
     "root",
     "section",
+    "chart",
     "radioGroup",
     "freeBox",
-    "chart",
     "button",
     "slider",
     "ol",
@@ -402,18 +402,18 @@ const PlasmicDescendants = {
 
   section: [
     "section",
+    "chart",
     "radioGroup",
     "freeBox",
-    "chart",
     "button",
     "slider",
     "ol",
     "link"
   ],
 
-  radioGroup: ["radioGroup", "freeBox", "chart"],
-  freeBox: ["freeBox", "chart"],
   chart: ["chart"],
+  radioGroup: ["radioGroup", "freeBox"],
+  freeBox: ["freeBox"],
   button: ["button"],
   slider: ["slider"],
   ol: ["ol"],
@@ -453,9 +453,9 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
+    chart: makeNodeComponent("chart"),
     radioGroup: makeNodeComponent("radioGroup"),
     freeBox: makeNodeComponent("freeBox"),
-    chart: makeNodeComponent("chart"),
     button: makeNodeComponent("button"),
     slider: makeNodeComponent("slider"),
     ol: makeNodeComponent("ol"),
