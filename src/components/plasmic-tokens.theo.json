@@ -11,6 +11,16 @@
       }
     },
     {
+      "name": "Basic/Container-Background-Dark",
+      "type": "color",
+      "value": "#171717",
+      "category": "color",
+      "meta": {
+        "projectId": "n77bFagGCBm17CMGVYCTUy",
+        "id": "otwH3oZK-7xA"
+      }
+    },
+    {
       "name": "Basic/Input-Background",
       "type": "color",
       "value": "#E5E7EB",
@@ -368,6 +378,16 @@
       "meta": {
         "projectId": "n77bFagGCBm17CMGVYCTUy",
         "id": "La17AmF-rQ0g"
+      }
+    },
+    {
+      "name": "Size-16",
+      "type": "spacing",
+      "value": "1rem",
+      "category": "spacing",
+      "meta": {
+        "projectId": "n77bFagGCBm17CMGVYCTUy",
+        "id": "9GiC8u_O5MWv"
       }
     },
     {

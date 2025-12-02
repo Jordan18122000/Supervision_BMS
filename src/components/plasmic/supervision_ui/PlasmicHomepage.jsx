@@ -19,10 +19,11 @@ import {
   useDollarState
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
+import Popover from "../../Popover"; // plasmic-import: 2RGaYL0IFbFk/component
+import Button from "../../Button"; // plasmic-import: 0Im7ofUWeSOU/component
 import { SimpleChart } from "@plasmicpkgs/react-chartjs-2";
 import RadioGroup from "../../RadioGroup"; // plasmic-import: sWXMCQynZyP7/component
 import Radio from "../../Radio"; // plasmic-import: bO1zqe-W4Egq/component
-import Button from "../../Button"; // plasmic-import: 0Im7ofUWeSOU/component
 import Slider from "../../Slider"; // plasmic-import: gP0kW2ReuBiN/component
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: n77bFagGCBm17CMGVYCTUy/styleTokensProvider
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -69,6 +70,12 @@ function PlasmicHomepage__RenderFunc(props) {
         type: "private",
         variableType: "array",
         initFunc: ({ $props, $state, $queries, $ctx }) => undefined
+      },
+      {
+        path: "popover.isOpen",
+        type: "private",
+        variableType: "boolean",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
 
@@ -113,6 +120,26 @@ function PlasmicHomepage__RenderFunc(props) {
             >
               {"Get started with Plasmic visual CMS."}
             </h1>
+            <Popover
+              data-plasmic-name={"popover"}
+              data-plasmic-override={overrides.popover}
+              className={classNames("__wab_instance", sty.popover)}
+              isOpen={generateStateValueProp($state, ["popover", "isOpen"])}
+              onOpenChange={async (...eventArgs) => {
+                generateStateOnChangeProp($state, ["popover", "isOpen"]).apply(
+                  null,
+                  eventArgs
+                );
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+            />
+
             <SimpleChart
               data-plasmic-name={"chart"}
               data-plasmic-override={overrides.chart}
@@ -391,6 +418,7 @@ const PlasmicDescendants = {
   root: [
     "root",
     "section",
+    "popover",
     "chart",
     "radioGroup",
     "freeBox",
@@ -402,6 +430,7 @@ const PlasmicDescendants = {
 
   section: [
     "section",
+    "popover",
     "chart",
     "radioGroup",
     "freeBox",
@@ -411,6 +440,7 @@ const PlasmicDescendants = {
     "link"
   ],
 
+  popover: ["popover"],
   chart: ["chart"],
   radioGroup: ["radioGroup", "freeBox"],
   freeBox: ["freeBox"],
@@ -453,6 +483,7 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
+    popover: makeNodeComponent("popover"),
     chart: makeNodeComponent("chart"),
     radioGroup: makeNodeComponent("radioGroup"),
     freeBox: makeNodeComponent("freeBox"),

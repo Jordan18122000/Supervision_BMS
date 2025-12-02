@@ -342,6 +342,32 @@
           "cssFilePath": "plasmic/supervision_ui/PlasmicRadioGroup.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "LoLK9HVqKHny",
+          "name": "OverlayArrow",
+          "type": "managed",
+          "projectId": "n77bFagGCBm17CMGVYCTUy",
+          "renderModuleFilePath": "plasmic/supervision_ui/PlasmicOverlayArrow.jsx",
+          "importSpec": {
+            "modulePath": "OverlayArrow.jsx"
+          },
+          "cssFilePath": "plasmic/supervision_ui/PlasmicOverlayArrow.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "2RGaYL0IFbFk",
+          "name": "Popover",
+          "type": "managed",
+          "projectId": "n77bFagGCBm17CMGVYCTUy",
+          "renderModuleFilePath": "plasmic/supervision_ui/PlasmicPopover.jsx",
+          "importSpec": {
+            "modulePath": "Popover.jsx"
+          },
+          "cssFilePath": "plasmic/supervision_ui/PlasmicPopover.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -354,6 +380,11 @@
           "id": "YH6kUnJPxm1w",
           "name": "ChevronDownIcon",
           "moduleFilePath": "plasmic/supervision_ui/icons/PlasmicIcon__ChevronDown.jsx"
+        },
+        {
+          "id": "LjOpJkPjz389",
+          "name": "TriangleFilledIcon",
+          "moduleFilePath": "plasmic/supervision_ui/icons/PlasmicIcon__TriangleFilled.jsx"
         }
       ],
       "images": [],
