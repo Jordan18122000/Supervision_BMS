@@ -21,6 +21,7 @@ import {
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import RadioGroup from "../../RadioGroup"; // plasmic-import: sWXMCQynZyP7/component
 import Radio from "../../Radio"; // plasmic-import: bO1zqe-W4Egq/component
+import { SimpleChart } from "@plasmicpkgs/react-chartjs-2";
 import Button from "../../Button"; // plasmic-import: 0Im7ofUWeSOU/component
 import Slider from "../../Slider"; // plasmic-import: gP0kW2ReuBiN/component
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: n77bFagGCBm17CMGVYCTUy/styleTokensProvider
@@ -150,6 +151,18 @@ function PlasmicHomepage__RenderFunc(props) {
                     className={classNames("__wab_instance", sty.radio__irvpt)}
                     label={"t bo"}
                     value={"option1"}
+                  />
+
+                  <SimpleChart
+                    data-plasmic-name={"chart"}
+                    data-plasmic-override={overrides.chart}
+                    className={classNames("__wab_instance", sty.chart)}
+                    data={[
+                      { region: "APAC", revenue: 3294, spend: 2675 },
+                      { region: "EMEA", revenue: 3245, spend: 3895 },
+                      { region: "LATAM", revenue: 2165, spend: 3498 },
+                      { region: "AMER", revenue: 3215, spend: 1656 }
+                    ]}
                   />
 
                   <Radio
@@ -380,6 +393,7 @@ const PlasmicDescendants = {
     "section",
     "radioGroup",
     "freeBox",
+    "chart",
     "button",
     "slider",
     "ol",
@@ -390,14 +404,16 @@ const PlasmicDescendants = {
     "section",
     "radioGroup",
     "freeBox",
+    "chart",
     "button",
     "slider",
     "ol",
     "link"
   ],
 
-  radioGroup: ["radioGroup", "freeBox"],
-  freeBox: ["freeBox"],
+  radioGroup: ["radioGroup", "freeBox", "chart"],
+  freeBox: ["freeBox", "chart"],
+  chart: ["chart"],
   button: ["button"],
   slider: ["slider"],
   ol: ["ol"],
@@ -439,6 +455,7 @@ export const PlasmicHomepage = Object.assign(
     section: makeNodeComponent("section"),
     radioGroup: makeNodeComponent("radioGroup"),
     freeBox: makeNodeComponent("freeBox"),
+    chart: makeNodeComponent("chart"),
     button: makeNodeComponent("button"),
     slider: makeNodeComponent("slider"),
     ol: makeNodeComponent("ol"),

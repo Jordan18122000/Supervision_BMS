@@ -13,8 +13,12 @@
     "@plasmicapp/cli": "^0.1.348",
     "@plasmicapp/loader-react": "^1.0.404",
     "@plasmicapp/react-web": "^0.2.408",
+    "@plasmicpkgs/plasmic-query": "^0.0.249",
     "@plasmicpkgs/react-aria": "^0.0.157",
+    "@plasmicpkgs/react-chartjs-2": "^1.0.140",
+    "chart.js": "^4.5.1",
     "react": "^19.2.0",
+    "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {

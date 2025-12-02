@@ -73,6 +73,12 @@
 .radio__irvpt:global(.__wab_instance):global(.__wab_instance) {
   position: relative;
 }
+.chart:global(.__wab_instance) {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  min-width: 0;
+}
 .radio__kkDvH:global(.__wab_instance):global(.__wab_instance) {
   position: relative;
 }
