@@ -82,6 +82,16 @@
   display: flex;
   flex-direction: column;
 }
+.slider:global(.__wab_instance):global(.__wab_instance) {
+  max-width: 100%;
+}
+.text__xWt7Q {
+  position: relative;
+}
+.sliderThumb__yeSW:global(.__wab_instance):global(.__wab_instance) {
+  position: relative;
+  margin-top: var(--token-YYZux-LbxwoA);
+}
 .h1__g7Afb {
   width: 100%;
   height: auto;
