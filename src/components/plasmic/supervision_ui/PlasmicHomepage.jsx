@@ -13,10 +13,14 @@ import {
   PlasmicLink as PlasmicLink__,
   classNames,
   createPlasmicElementProxy,
-  deriveRenderOpts
+  deriveRenderOpts,
+  generateStateOnChangeProp,
+  generateStateValueProp,
+  useDollarState
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
 import Button from "../../Button"; // plasmic-import: 0Im7ofUWeSOU/component
+import Slider from "../../Slider"; // plasmic-import: gP0kW2ReuBiN/component
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: n77bFagGCBm17CMGVYCTUy/styleTokensProvider
 import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic.module.css"; // plasmic-import: n77bFagGCBm17CMGVYCTUy/projectcss
@@ -49,6 +53,24 @@ function PlasmicHomepage__RenderFunc(props) {
   const $ctx = useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
+  const stateSpecs = React.useMemo(
+    () => [
+      {
+        path: "slider.value",
+        type: "private",
+        variableType: "number",
+        initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      }
+    ],
+
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
   const styleTokensClassNames = _useStyleTokens();
   return (
     <React.Fragment>
@@ -253,6 +275,26 @@ function PlasmicHomepage__RenderFunc(props) {
                 <React.Fragment>{"!"}</React.Fragment>
               </React.Fragment>
             </div>
+            <Slider
+              data-plasmic-name={"slider"}
+              data-plasmic-override={overrides.slider}
+              className={classNames("__wab_instance", sty.slider)}
+              onChange={async (...eventArgs) => {
+                generateStateOnChangeProp($state, ["slider", "value"]).apply(
+                  null,
+                  eventArgs
+                );
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              value={generateStateValueProp($state, ["slider", "value"])}
+            />
+
             <h1
               className={classNames(
                 projectcss.all,
@@ -271,12 +313,13 @@ function PlasmicHomepage__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "button", "text", "ol", "link"],
-  section: ["section", "button", "text", "ol", "link"],
+  root: ["root", "section", "button", "text", "ol", "link", "slider"],
+  section: ["section", "button", "text", "ol", "link", "slider"],
   button: ["button"],
   text: ["text", "ol", "link"],
   ol: ["ol"],
-  link: ["link"]
+  link: ["link"],
+  slider: ["slider"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -316,6 +359,7 @@ export const PlasmicHomepage = Object.assign(
     text: makeNodeComponent("text"),
     ol: makeNodeComponent("ol"),
     link: makeNodeComponent("link"),
+    slider: makeNodeComponent("slider"),
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
     internalArgProps: PlasmicHomepage__ArgProps,

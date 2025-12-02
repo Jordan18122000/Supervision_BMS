@@ -264,6 +264,58 @@
           "cssFilePath": "plasmic/supervision_ui/PlasmicButton.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "oZG5dj1wkNtC",
+          "name": "Label",
+          "type": "managed",
+          "projectId": "n77bFagGCBm17CMGVYCTUy",
+          "renderModuleFilePath": "plasmic/supervision_ui/PlasmicLabel.jsx",
+          "importSpec": {
+            "modulePath": "Label.jsx"
+          },
+          "cssFilePath": "plasmic/supervision_ui/PlasmicLabel.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "ZUF7G1hL7Yqs",
+          "name": "SliderThumb",
+          "type": "managed",
+          "projectId": "n77bFagGCBm17CMGVYCTUy",
+          "renderModuleFilePath": "plasmic/supervision_ui/PlasmicSliderThumb.jsx",
+          "importSpec": {
+            "modulePath": "SliderThumb.jsx"
+          },
+          "cssFilePath": "plasmic/supervision_ui/PlasmicSliderThumb.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "NA_hOn8-IjSe",
+          "name": "Description",
+          "type": "managed",
+          "projectId": "n77bFagGCBm17CMGVYCTUy",
+          "renderModuleFilePath": "plasmic/supervision_ui/PlasmicDescription.jsx",
+          "importSpec": {
+            "modulePath": "Description.jsx"
+          },
+          "cssFilePath": "plasmic/supervision_ui/PlasmicDescription.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "gP0kW2ReuBiN",
+          "name": "Slider",
+          "type": "managed",
+          "projectId": "n77bFagGCBm17CMGVYCTUy",
+          "renderModuleFilePath": "plasmic/supervision_ui/PlasmicSlider.jsx",
+          "importSpec": {
+            "modulePath": "Slider.jsx"
+          },
+          "cssFilePath": "plasmic/supervision_ui/PlasmicSlider.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
