@@ -72,16 +72,6 @@
   position: relative;
   height: 1em;
 }
-.text {
-  position: relative;
-  width: 100%;
-  height: auto;
-  min-width: 0;
-}
-.ol {
-  display: flex;
-  flex-direction: column;
-}
 .slider:global(.__wab_instance):global(.__wab_instance) {
   max-width: 100%;
 }
@@ -91,6 +81,16 @@
 .sliderThumb__yeSW:global(.__wab_instance):global(.__wab_instance) {
   position: relative;
   margin-top: var(--token-YYZux-LbxwoA);
+}
+.text {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+.ol {
+  display: flex;
+  flex-direction: column;
 }
 .h1__g7Afb {
   width: 100%;

@@ -110,6 +110,26 @@ function PlasmicHomepage__RenderFunc(props) {
               className={classNames("__wab_instance", sty.button)}
             />
 
+            <Slider
+              data-plasmic-name={"slider"}
+              data-plasmic-override={overrides.slider}
+              className={classNames("__wab_instance", sty.slider)}
+              onChange={async (...eventArgs) => {
+                generateStateOnChangeProp($state, ["slider", "value"]).apply(
+                  null,
+                  eventArgs
+                );
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              value={generateStateValueProp($state, ["slider", "value"])}
+            />
+
             <div
               data-plasmic-name={"text"}
               data-plasmic-override={overrides.text}
@@ -275,26 +295,6 @@ function PlasmicHomepage__RenderFunc(props) {
                 <React.Fragment>{"!"}</React.Fragment>
               </React.Fragment>
             </div>
-            <Slider
-              data-plasmic-name={"slider"}
-              data-plasmic-override={overrides.slider}
-              className={classNames("__wab_instance", sty.slider)}
-              onChange={async (...eventArgs) => {
-                generateStateOnChangeProp($state, ["slider", "value"]).apply(
-                  null,
-                  eventArgs
-                );
-                if (
-                  eventArgs.length > 1 &&
-                  eventArgs[1] &&
-                  eventArgs[1]._plasmic_state_init_
-                ) {
-                  return;
-                }
-              }}
-              value={generateStateValueProp($state, ["slider", "value"])}
-            />
-
             <h1
               className={classNames(
                 projectcss.all,
@@ -313,13 +313,13 @@ function PlasmicHomepage__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "button", "text", "ol", "link", "slider"],
-  section: ["section", "button", "text", "ol", "link", "slider"],
+  root: ["root", "section", "button", "slider", "text", "ol", "link"],
+  section: ["section", "button", "slider", "text", "ol", "link"],
   button: ["button"],
+  slider: ["slider"],
   text: ["text", "ol", "link"],
   ol: ["ol"],
-  link: ["link"],
-  slider: ["slider"]
+  link: ["link"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -356,10 +356,10 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
     button: makeNodeComponent("button"),
+    slider: makeNodeComponent("slider"),
     text: makeNodeComponent("text"),
     ol: makeNodeComponent("ol"),
     link: makeNodeComponent("link"),
-    slider: makeNodeComponent("slider"),
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
     internalArgProps: PlasmicHomepage__ArgProps,
