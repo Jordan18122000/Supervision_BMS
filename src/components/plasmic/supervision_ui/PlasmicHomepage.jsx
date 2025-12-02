@@ -19,6 +19,8 @@ import {
   useDollarState
 } from "@plasmicapp/react-web";
 import { useDataEnv } from "@plasmicapp/react-web/lib/host";
+import RadioGroup from "../../RadioGroup"; // plasmic-import: sWXMCQynZyP7/component
+import Radio from "../../Radio"; // plasmic-import: bO1zqe-W4Egq/component
 import Button from "../../Button"; // plasmic-import: 0Im7ofUWeSOU/component
 import Slider from "../../Slider"; // plasmic-import: gP0kW2ReuBiN/component
 import { _useStyleTokens } from "./PlasmicStyleTokensProvider"; // plasmic-import: n77bFagGCBm17CMGVYCTUy/styleTokensProvider
@@ -60,6 +62,12 @@ function PlasmicHomepage__RenderFunc(props) {
         type: "private",
         variableType: "number",
         initFunc: ({ $props, $state, $queries, $ctx }) => 0
+      },
+      {
+        path: "radioGroup.value",
+        type: "private",
+        variableType: "array",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined
       }
     ],
 
@@ -104,6 +112,62 @@ function PlasmicHomepage__RenderFunc(props) {
             >
               {"Get started with Plasmic visual CMS."}
             </h1>
+            <RadioGroup
+              data-plasmic-name={"radioGroup"}
+              data-plasmic-override={overrides.radioGroup}
+              className={classNames("__wab_instance", sty.radioGroup)}
+              label={
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__c4CXb
+                  )}
+                >
+                  {"Label"}
+                </div>
+              }
+              onChange={async (...eventArgs) => {
+                generateStateOnChangeProp($state, [
+                  "radioGroup",
+                  "value"
+                ]).apply(null, eventArgs);
+                if (
+                  eventArgs.length > 1 &&
+                  eventArgs[1] &&
+                  eventArgs[1]._plasmic_state_init_
+                ) {
+                  return;
+                }
+              }}
+              options={
+                <div
+                  data-plasmic-name={"freeBox"}
+                  data-plasmic-override={overrides.freeBox}
+                  className={classNames(projectcss.all, sty.freeBox)}
+                >
+                  <Radio
+                    className={classNames("__wab_instance", sty.radio__irvpt)}
+                    label={"t bo"}
+                    value={"option1"}
+                  />
+
+                  <Radio
+                    className={classNames("__wab_instance", sty.radio__kkDvH)}
+                    label={"tkt"}
+                    value={"option2"}
+                  />
+
+                  <Radio
+                    className={classNames("__wab_instance", sty.radio__q7KU6)}
+                    label={"T  ou"}
+                    value={"option3"}
+                  />
+                </div>
+              }
+              value={generateStateValueProp($state, ["radioGroup", "value"])}
+            />
+
             <Button
               data-plasmic-name={"button"}
               data-plasmic-override={overrides.button}
@@ -131,12 +195,10 @@ function PlasmicHomepage__RenderFunc(props) {
             />
 
             <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text
+                sty.text___2XRh
               )}
             >
               <React.Fragment>
@@ -313,11 +375,31 @@ function PlasmicHomepage__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "section", "button", "slider", "text", "ol", "link"],
-  section: ["section", "button", "slider", "text", "ol", "link"],
+  root: [
+    "root",
+    "section",
+    "radioGroup",
+    "freeBox",
+    "button",
+    "slider",
+    "ol",
+    "link"
+  ],
+
+  section: [
+    "section",
+    "radioGroup",
+    "freeBox",
+    "button",
+    "slider",
+    "ol",
+    "link"
+  ],
+
+  radioGroup: ["radioGroup", "freeBox"],
+  freeBox: ["freeBox"],
   button: ["button"],
   slider: ["slider"],
-  text: ["text", "ol", "link"],
   ol: ["ol"],
   link: ["link"]
 };
@@ -355,9 +437,10 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     section: makeNodeComponent("section"),
+    radioGroup: makeNodeComponent("radioGroup"),
+    freeBox: makeNodeComponent("freeBox"),
     button: makeNodeComponent("button"),
     slider: makeNodeComponent("slider"),
-    text: makeNodeComponent("text"),
     ol: makeNodeComponent("ol"),
     link: makeNodeComponent("link"),
     // Metadata about props expected for PlasmicHomepage

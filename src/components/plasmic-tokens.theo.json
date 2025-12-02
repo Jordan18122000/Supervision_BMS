@@ -21,6 +21,16 @@
       }
     },
     {
+      "name": "Basic/Ring",
+      "type": "color",
+      "value": "#9CA3AF",
+      "category": "color",
+      "meta": {
+        "projectId": "n77bFagGCBm17CMGVYCTUy",
+        "id": "QW24m3vAljcz"
+      }
+    },
+    {
       "name": "Basic/Text-Primary",
       "type": "color",
       "value": "#030712",

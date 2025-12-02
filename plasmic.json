@@ -316,6 +316,32 @@
           "cssFilePath": "plasmic/supervision_ui/PlasmicSlider.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "bO1zqe-W4Egq",
+          "name": "Radio",
+          "type": "managed",
+          "projectId": "n77bFagGCBm17CMGVYCTUy",
+          "renderModuleFilePath": "plasmic/supervision_ui/PlasmicRadio.jsx",
+          "importSpec": {
+            "modulePath": "Radio.jsx"
+          },
+          "cssFilePath": "plasmic/supervision_ui/PlasmicRadio.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "sWXMCQynZyP7",
+          "name": "RadioGroup",
+          "type": "managed",
+          "projectId": "n77bFagGCBm17CMGVYCTUy",
+          "renderModuleFilePath": "plasmic/supervision_ui/PlasmicRadioGroup.jsx",
+          "importSpec": {
+            "modulePath": "RadioGroup.jsx"
+          },
+          "cssFilePath": "plasmic/supervision_ui/PlasmicRadioGroup.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [

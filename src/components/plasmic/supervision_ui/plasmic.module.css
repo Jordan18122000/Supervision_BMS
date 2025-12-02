@@ -105,6 +105,8 @@
   --plasmic-token-basic-container-background: var(--token-Y3YqilnWxqxd);
   --token-PSk2wY11I2Ix: 1.25rem;
   --plasmic-token-size-20: var(--token-PSk2wY11I2Ix);
+  --token-QW24m3vAljcz: #9ca3af;
+  --plasmic-token-basic-ring: var(--token-QW24m3vAljcz);
 }
 
 .plasmic_tokens {
